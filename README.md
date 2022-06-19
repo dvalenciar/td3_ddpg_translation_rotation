@@ -5,13 +5,18 @@ Continuous Action Deep Reinforcement Learning for Dexterous Robotic Manipulation
  </h1>
  
   <p align="center">
-    • Centre for Automation and Robotic Engineering Science, University of Auckland •
-    • New Dexterity Research Group •
+    • Centre for Automation and Robotic Engineering Science •
   </p>
 
   <p align="center">
     • New Dexterity Research Group •
   </p>
+  
+  <p align="center">
+    University of Auckland
+  </p>
+  
+  
 
 
 
