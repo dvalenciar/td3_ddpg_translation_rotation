@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-Multiple Simultaneous Continuous Action Agent for Controlling a Low-Cost Real Robot Gripper
+Continuous Action Deep Reinforcement Learning for Dexterous Robotic Manipulation
   <br>
  </h1>
  
