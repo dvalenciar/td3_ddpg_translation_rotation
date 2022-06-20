@@ -27,9 +27,18 @@ Continuous Action Deep Reinforcement Learning for Dexterous Robotic Manipulation
 ## List of Materials:
 In order to have an exact replication of the robot used in this proposal, you will need the following materials:
 
-|Material      | Brand           | Quantity |
+|Material      | Brand           | Quantity | 
 | ServoMotors  | Dynamixel XL-320| 4  |
 
+|Library         | Version (TESTED) |
+|----------------------|----|
+| Python | 3.8|
+| torch | 1.7.1+cu101|
+| numpy | 1.19.4|
+| PIL |  7.0.0 |
+| tqdm|  4.54.0|
+| matplotlib|  3.3.3|
+| gym| 0.17.3|
 
 
 
