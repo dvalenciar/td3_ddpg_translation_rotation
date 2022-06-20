@@ -36,5 +36,11 @@ If you use either the code or data in your paper, please kindly star this repo a
 
 Cite this paper as:
 
+
 ## Contact
 Please feel free to contact us or open an issue if you have questions or need additional explanations.
+
+## References
+ME Thesis – Alex Hayashi link https://newdexterity.org/manipulationtestbed/
+DDPG  
+TD3 
