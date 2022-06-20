@@ -41,6 +41,6 @@ Cite this paper as:
 Please feel free to contact us or open an issue if you have questions or need additional explanations.
 
 ## References
-ME Thesis – Alex Hayashi link https://newdexterity.org/manipulationtestbed/
-DDPG  
-TD3 
+- ME Thesis – Alex Hayashi  https://newdexterity.org/manipulationtestbed/
+- DDPG  
+- TD3 
