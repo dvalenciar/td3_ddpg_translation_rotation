@@ -30,7 +30,7 @@ In order to have an exact replication of the robot used in this proposal, you wi
 |Material      | Brand| Quantity|
 |--------------|------|---------|
 | ServoMotors  | Dynamixel XL-320| 4  |
-| WebCam  | Stadard| 1  |
+| WebCam  | Standard| 1  |
 | STL Files  |   | link   |
 
 
