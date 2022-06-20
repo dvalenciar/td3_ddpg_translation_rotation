@@ -34,7 +34,7 @@ Continuous Action Deep Reinforcement Learning for Dexterous Robotic Manipulation
 ## Citation
 If you use either the code or data in your paper, please kindly star this repo and cite our paper
 
-Cite this paper as:
+Cite this paper as:Coming soon
 
 
 ## Contact
