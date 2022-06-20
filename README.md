@@ -42,5 +42,5 @@ Please feel free to contact us or open an issue if you have questions or need ad
 
 ## References
 - ME Thesis – Alex Hayashi  https://newdexterity.org/manipulationtestbed/
-- DDPG  
-- TD3 
+- DDPG https://arxiv.org/abs/1509.02971 
+- TD3  https://arxiv.org/pdf/1802.09477.pdf
