@@ -19,11 +19,6 @@ Continuous Action Deep Reinforcement Learning for Dexterous Robotic Manipulation
   
 
 
-
-
-
-
-
 ## List of Materials:
 In order to have an exact replication of the robot used in this proposal, you will need the following materials:
 
@@ -36,8 +31,12 @@ In order to have an exact replication of the robot used in this proposal, you wi
 
 
 
+## Results
 
 
+# Video
+A video showing the robot executing the tasks during the training process can be found at:
+https://www.youtube.com/watch?v=ReDdVq_bQuQ
 
 ## Citation
 If you use either the code or data in your paper, please kindly star this repo and cite our paper
