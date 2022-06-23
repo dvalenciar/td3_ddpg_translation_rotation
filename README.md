@@ -24,8 +24,10 @@ In order to have an exact replication of the robot used in this proposal, you wi
 | ServoMotors  | Dynamixel XL-320| 4  |
 | WebCam  | Standard| 1  |
 | STL Files  |   | [link](https://github.com/dvalenciar/td3_ddpg_translation_rotation/tree/main/STL_FILES_FOR_3D_PRINTER)   |
-
-  ![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_full.png)
+| USD2 PHB|Dynamixel | 1 |
+| U2D2 INT|Dynamixel | 1 |
+ 
+ ![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_full.png)
 
 
 ## Results
