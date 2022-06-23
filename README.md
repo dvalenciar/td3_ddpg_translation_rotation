@@ -30,6 +30,9 @@ In order to have an exact replication of the robot used in this proposal, you wi
  
  ![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_full.png)
 
+## Network Architecture 
+Two state-space representations were used as state input for both DDPG and TD3. The below images describe the architecture used for the critic and actor NN (for more details, please see the paper)
+
 
 ## Results
 For testing purposes, this robot is trained to complete two manipulation tasks, translation and rotation of an object. DDPG and TD3 were implemented
