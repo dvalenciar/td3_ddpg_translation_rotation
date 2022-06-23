@@ -21,7 +21,7 @@ Continuous Action Deep Reinforcement Learning for Dexterous Robotic Manipulation
 
 ## List of Materials:
   <p align="center">
-    ![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_full.png)
+    !.[].(https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_full.png)
   </p>
   
 In order to have an exact replication of the robot used in this proposal, you will need the following materials:
