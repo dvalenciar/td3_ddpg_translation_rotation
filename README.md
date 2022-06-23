@@ -17,6 +17,7 @@ Continuous Action Deep Reinforcement Learning for Dexterous Robotic Manipulation
   </p>
   
   
+## Materials  
 In order to have an exact replication of the robot used in this proposal, you will need the following materials:
 
 |Material      | Brand| Quantity|
