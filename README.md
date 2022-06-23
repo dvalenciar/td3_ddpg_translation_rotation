@@ -33,8 +33,8 @@ In order to have an exact replication of the robot used in this proposal, you wi
 ## Network Architecture 
 Two state-space representations were used as state input for both DDPG and TD3. The below images describe the architecture used for the critic and actor NN (for more details, please see the paper)
 
- ![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/actor.png)
-
+![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/actor.png)
+![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/critic.png)
 
 
 
