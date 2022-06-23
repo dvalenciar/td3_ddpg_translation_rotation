@@ -32,9 +32,10 @@ In order to have an exact replication of the robot used in this proposal, you wi
 
 
 ## Results
+Result from training here
 
 
-# Video
+## Video
 A video showing the robot executing the tasks during the training process can be found at:
 https://www.youtube.com/watch?v=ReDdVq_bQuQ
 
