@@ -42,7 +42,8 @@ https://www.youtube.com/watch?v=ReDdVq_bQuQ
 ## Citation
 If you use either the code or data in your paper, please kindly star this repo and cite our paper
 
-Cite this paper as:Coming soon
+Cite this paper as: 
+Coming soon
 
 
 ## Contact
