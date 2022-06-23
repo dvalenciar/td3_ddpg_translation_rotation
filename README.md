@@ -28,7 +28,7 @@ In order to have an exact replication of the robot used in this proposal, you wi
 | WebCam  | Standard| 1  |
 | STL Files  |   | link   |
 
-
+![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_full.png)
 
 
 ## Results
