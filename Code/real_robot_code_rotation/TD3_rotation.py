@@ -1,10 +1,10 @@
-import time
+
 
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from main_rl_env import RL_ENV
+from main_rl_rotation import RL_ENV
 from Memory      import MemoryClass
 from Networks    import CriticTD3, ActorTD3
 
@@ -13,10 +13,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
 class TD3agent(object):
 
-    def __init__(self, env, batch_size=32, max_memory_size=50_000, gamma=0.99, critic_learning_rate=1e-3,
+    def __init__(self, env, batch_size=32, max_memory_size=80_000, gamma=0.99, critic_learning_rate=1e-3,
                  actor_learning_rate=1e-4, tau=0.005):
 
         # -------- Hyper-parameters --------------- #
@@ -28,12 +27,11 @@ class TD3agent(object):
         self.tau                = tau
         self.update_counter     = 0
 
-
         self.hidden_size_critic = [64, 64, 32]
         self.hidden_size_actor  = [64, 64, 32]
 
         # -------- Parameters --------------- #
-        self.num_states  = 12
+        self.num_states  = 10
         self.num_actions = 4
 
         # ------------- Initialization memory --------------------- #
@@ -64,6 +62,7 @@ class TD3agent(object):
         self.critic_optimizer_1 = optim.Adam(self.critic_q1.parameters(), lr=critic_learning_rate)
         self.critic_optimizer_2 = optim.Adam(self.critic_q2.parameters(), lr=critic_learning_rate)
 
+
     def get_action(self, state):
         state_tensor = torch.from_numpy(state).float().unsqueeze(0)  # numpy to a tensor with shape [1,12]
         self.actor.eval()
@@ -87,6 +86,7 @@ class TD3agent(object):
     def add_experience_memory(self, state, action, reward, next_state, done):
         # Save experience in memory
         self.memory.replay_buffer_add(state, action, reward, next_state, done)
+
 
     def step_training(self):
         # check, if enough samples are available in memory
@@ -117,7 +117,7 @@ class TD3agent(object):
 
             # add noise also here, paper mention this
             next_actions = next_actions.detach().numpy()  # tensor to numpy
-            next_actions = next_actions + (np.random.normal(0, scale=0.2, size=self.num_actions))
+            next_actions = next_actions + (np.random.normal(0, scale=0.3, size=self.num_actions))
             next_actions = np.clip(next_actions, -1, 1)
             next_actions = torch.FloatTensor(next_actions)
 
@@ -146,7 +146,6 @@ class TD3agent(object):
             critic_loss_2.backward()
             self.critic_optimizer_2.step()
 
-
             # TD3 updates the policy (and target networks) less frequently than the Q-function
             if self.update_counter % self.policy_freq_update == 0:
                 # ------- calculate the actor loss
@@ -168,25 +167,22 @@ class TD3agent(object):
                     target_param.data.copy_(param.data * self.tau + target_param.data * (1.0 - self.tau))
 
 
-
-
     def save_model(self):
-        torch.save(self.actor.state_dict(), 'weights/td3_actor_cube_demo.pth')
-        torch.save(self.critic_q1.state_dict(), 'weights/td3_critic_1_cube_demo.pth')
-        torch.save(self.critic_q2.state_dict(), 'weights/td3_critic_2_cube_demo.pth')
+        torch.save(self.actor.state_dict(), 'td3_actor_cylinder_t2.pth')
+        torch.save(self.critic_q1.state_dict(), 'td3_critic_1_cylinder_t2.pth')
+        torch.save(self.critic_q2.state_dict(), 'td3_critic_2_cylinder_t2.pth')
         print("models has been saved...")
 
     def load_model(self):
-        self.actor.load_state_dict(torch.load('weights/td3_actor_cube.pth'))
-        self.critic_q1.load_state_dict(torch.load('weights/td3_critic_cube.pth'))
-        self.critic_q2.load_state_dict(torch.load('weights/td3_critic_cube.pth'))
+        self.actor.load_state_dict(torch.load('td3_actor_cylinder_t2.pth'))
+        self.critic_q1.load_state_dict(torch.load('td3_critic_1_cylinder_t2.pth'))
+        self.critic_q2.load_state_dict(torch.load('td3_critic_2_cylinder_t2.pth'))
         print("models has been loaded...")
 
 
-
 def main_run():
-    num_episodes     = 10_000
-    episode_horizont = 5
+    num_episodes     = 80_000
+    episode_horizont = 25
     batch_size = 64
 
     rewards     = []
@@ -196,26 +192,25 @@ def main_run():
     agent = TD3agent(env, batch_size=batch_size)
 
     success_counter = 0
-
     step_counter = 0
-
     for episode in range(1, num_episodes+1):
-
         env.reset_env()
         episode_reward = 0
 
         for step in range(1, episode_horizont+1):
-            step_counter += 1
             print(f"-------Episode:{episode} Step:{step}---------")
-            state, _  = env.state_space_funct()
 
-            if step_counter < 1000:
+            step_counter+=1
+
+            state, _ = env.state_space_funct()
+
+            if step_counter < 80_000:
                 print("exploration")
                 action = agent.get_action_exploration()
             else:
                 action = agent.get_action(state)
                 print("Action Learned:----->", action)
-                noise = np.random.normal(0, scale=0.1, size=4)
+                noise = np.random.normal(0, scale=0.2, size=4)
                 action = action + noise
                 action = np.clip(action, -1, 1)
 
@@ -225,8 +220,6 @@ def main_run():
             reward, done = env.calculate_reward()
             agent.add_experience_memory(state, action, reward, next_state, done)
             episode_reward += reward
-
-            env.env_render(image_state, done, step)
 
             if done:
                 success_counter += 1
@@ -239,15 +232,14 @@ def main_run():
         print("Episode total reward:", episode_reward)
 
         rewards.append(episode_reward)
-        avg_rewards.append(np.mean(rewards[-100:]))
-
+        avg_rewards.append(np.mean(rewards[-1000:]))
 
     agent.save_model()
     env.close_env()  # close the usb port and disable torque
 
-    np.savetxt('data_to_plot/rewards_t2_vector_demo.txt', rewards)
-    np.savetxt('data_to_plot/avd_reward_t2_vector_demo.txt', avg_rewards)
-        
+    np.savetxt("data_plot_rewards.txt_t2", rewards)
+    np.savetxt("data_plot_avg_rewards.txt_t2", avg_rewards)
+
     plt.plot(rewards)
     plt.plot(avg_rewards)
     plt.plot()
@@ -279,7 +271,6 @@ def test_mode():
 
             episode_reward += reward
 
-            env.env_render(image_state, done, step)
             if done:
                 break
         print("Episode total reward:", episode_reward)
