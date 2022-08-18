@@ -31,7 +31,6 @@ Two state-space representations were used as state input for both DDPG and TD3. 
 ## Results
 For testing purposes, this robot is trained to complete two manipulation tasks, translation and rotation of an object. DDPG and TD3 were implemented
 
- ![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/Results_vector.png)
 
 ## Video
 A video showing the robot executing the tasks during the training process can be found at:
