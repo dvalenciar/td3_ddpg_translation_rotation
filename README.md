@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-Continuous Action Deep Reinforcement Learning for Dexterous Robotic Manipulation
+Getting to Grips with Model-Free Deep Reinforcement Learning for Dexterous Robotic Manipulation: Challenges, Analysis, Limitations
   <br>
  </h1>
  
