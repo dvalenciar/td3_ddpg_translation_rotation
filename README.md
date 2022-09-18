@@ -5,8 +5,6 @@ Getting to Grips with Model-Free Deep Reinforcement Learning for Dexterous Robot
  </h1>
  
 
-  
-  
 ## Materials  
 In order to have an exact replication of the robot used in this proposal, you will need the following materials:
 
@@ -20,21 +18,19 @@ In order to have an exact replication of the robot used in this proposal, you wi
  
  ![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_full.png)
 
-## Network Architecture 
-Two state-space representations were used as state input for both DDPG and TD3. The below images describe the architecture used for the critic and actor NN (for more details, please see the paper)
+## State-Space
+Two state-space representations were used as state input for all the algorithms.
 
-![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/actor.png)
-![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/critic.png)
-
-
+## Action-Space
+The action-space controls the joint angles of each servomotors
 
 ## Results
-For testing purposes, this robot is trained to complete two manipulation tasks, translation and rotation of an object. DDPG and TD3 were implemented
+For testing purposes, this robot is trained to complete a manipulation task, translation of an object (5cm cube).
 
 
 ## Video
 A video showing the robot executing the tasks during the training process can be found at:
-https://www.youtube.com/watch?v=ReDdVq_bQuQ
+[https://www.youtube.com/watch?v=ReDdVq_bQuQ](https://www.youtube.com/watch?v=2QBPtrrYIrY)
 
 ## Citation
 If you use either the code or data in your paper, please kindly star this repo and cite our paper
@@ -46,7 +42,3 @@ Coming soon
 ## Contact
 Please feel free to contact us or open an issue if you have questions or need additional explanations.
 
-## References
-- ME Thesis – Alex Hayashi  https://newdexterity.org/manipulationtestbed/
-- DDPG https://arxiv.org/abs/1509.02971 
-- TD3  https://arxiv.org/pdf/1802.09477.pdf
