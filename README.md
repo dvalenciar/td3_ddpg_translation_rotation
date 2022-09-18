@@ -19,7 +19,7 @@ In order to have an exact replication of the robot used in this proposal, you wi
  ![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_full.png)
 
 ## State-Space
-Two state-space representations were used as state input for all the algorithms.
+Two state-space representations were used as state input for all the algorithms. Image represention and vector representation
 
 ## Action-Space
 The action-space controls the joint angles of each servomotors
@@ -27,8 +27,17 @@ The action-space controls the joint angles of each servomotors
 ## Results
 For testing purposes, this robot is trained to complete a manipulation task, translation of an object (5cm cube).
 
+![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/gripper_new.png)
+
+Results using image representation
+![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/result_image.png)
+
+Results using vector representation
+![](https://github.com/dvalenciar/td3_ddpg_translation_rotation/blob/main/images/result_vector.png)
+
 
 ## Video
+
 A video showing the robot executing the tasks during the training process can be found at:
 [https://www.youtube.com/watch?v=ReDdVq_bQuQ](https://www.youtube.com/watch?v=2QBPtrrYIrY)
 
