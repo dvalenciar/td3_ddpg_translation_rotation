@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-Getting to Grips with Model-Free Deep Reinforcement Learning for Dexterous Robotic Manipulation: Challenges, Analysis, Limitations
+Getting to Grips with Model-Free Deep Reinforcement Learning for Dexterous Robotic Manipulation: Benchmarks, Analyses, Challenges
   <br>
  </h1>
  
